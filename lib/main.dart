@@ -118,6 +118,33 @@ class LogInScreen extends StatelessWidget {
                     CustomTextFormField(label: "Email",),
                     SizedBox(height: 8.0),
                     CustomTextFormField(label: "Password",),
+                    SizedBox(height: 8.0),
+                    GestureDetector(
+
+                      onTap: (){
+                        print("Hello");
+              },
+                      child: Container(
+                        padding: EdgeInsets.all(8),
+                        child: Text("Log In"),
+                      ),
+                    ),
+                  Container(
+                    decoration: BoxDecoration(gradient: kLightGradient,
+                    
+                    borderRadius: BorderRadius.circular(30)
+                    ),
+                    child: MaterialButton(
+                      height: 64,
+                      minWidth: 200,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(30)
+                      ),
+                      onPressed: (){},
+                      child: Text("Log In", style:  TextStyle(color: Colors.white,
+                      fontSize: 28.0),),
+                    ),
+                  ),
                   ],
                 ),
               ),
