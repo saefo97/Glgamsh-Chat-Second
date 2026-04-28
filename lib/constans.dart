@@ -1,14 +1,12 @@
-
-
 import 'package:flutter/material.dart';
 
-Color kMainColor = Colors.teal;
+Color kMainColor = Colors.yellow;
 
-Color kLightColor1 = Colors.teal.shade300;
-Color kLightColor2 = Colors.teal.shade500;
+Color kLightColor1 = Colors.yellow.shade300;
+Color kLightColor2 = Colors.yellow.shade500;
 
-Color kDarkColor1 = Colors.teal.shade700;
-Color kDarkColor2 = Colors.teal.shade900;
+Color kDarkColor1 = Colors.yellow.shade700;
+Color kDarkColor2 = Colors.yellow.shade900;
 
 LinearGradient kLightGradient = LinearGradient(
   colors: [kLightColor2,kLightColor1],
