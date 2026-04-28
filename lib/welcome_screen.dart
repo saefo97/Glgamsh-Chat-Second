@@ -13,7 +13,20 @@ class WelcomeScreen extends StatelessWidget {
       body: BackgroundDecoration(child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          // TODO: وضع صورة
+          // CircleAvatar(
+          //   radius: 65,
+          //   backgroundColor: Colors.green,
+          //   child: CircleAvatar(
+          //     radius: 60,
+          //     backgroundImage: NetworkImage("https://kitchen.sayidaty.net/uploads/small/f4/f4dd06616700c8a35cda336664339134_w750_h500.jpg"),
+          //   ),
+          // ),
+      //    Image.network("https://kitchen.sayidaty.net/uploads/small/f4/f4dd06616700c8a35cda336664339134_w750_h500.jpg"),
+         Image.asset("assets/images/logo.png",
+         height: 150,
+         ),
+          SizedBox(height: 12,),
+
           Text("Welcome to Our Chat App!",
             style: TextStyle(color:kMainColor, fontSize: 30),
 
