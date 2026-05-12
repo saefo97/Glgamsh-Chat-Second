@@ -1,7 +1,8 @@
 import 'package:chat_second/background_decoration.dart';
 import 'package:chat_second/custom_button.dart';
+import 'package:chat_second/log_in_screen.dart';
+import 'package:chat_second/sign_up_screen.dart';
 import 'package:flutter/material.dart';
-
 import 'constans.dart';
 
 class WelcomeScreen extends StatelessWidget {
@@ -22,8 +23,11 @@ class WelcomeScreen extends StatelessWidget {
           //   ),
           // ),
       //    Image.network("https://kitchen.sayidaty.net/uploads/small/f4/f4dd06616700c8a35cda336664339134_w750_h500.jpg"),
-         Image.asset("assets/images/logo.png",
-         height: 150,
+          Hero(
+            tag: 'logo',
+           child: Image.asset("assets/images/logo.png",
+           height: 150,
+           ),
          ),
           SizedBox(height: 12,),
 
@@ -35,8 +39,23 @@ class WelcomeScreen extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              CustomButton(title: "Log In"),
-              CustomButton(title: "Sign Up"),
+              Hero(
+                tag: 'logIn',
+                child: CustomButton(title: "Log In",
+                onPressed: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=> LogInScreen()));
+
+                },
+
+                ),
+              ),
+              Hero(
+                tag: 'signUp',                child: CustomButton(title: "Sign Up",
+                  onPressed: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=> SignUpScreen()));
+                  },
+                ),
+              ),
             ],
           )
         ],

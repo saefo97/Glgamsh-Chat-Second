@@ -3,7 +3,8 @@ import 'constans.dart';
 
 class CustomButton extends StatelessWidget {
   final String title;
-  const CustomButton({super.key, required this.title});
+  final void Function()? onPressed;
+  const CustomButton({super.key, required this.title, this.onPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +18,7 @@ class CustomButton extends StatelessWidget {
       child: MaterialButton(
         height: 64,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
-        onPressed: () {},
+        onPressed: onPressed,
         child: Text(
           title,
           style: TextStyle(color: Colors.white, fontSize: 28.0),

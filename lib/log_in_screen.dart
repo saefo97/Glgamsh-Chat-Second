@@ -14,9 +14,18 @@ class LogInScreen extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Text(
-                "Log In",
-                style: TextStyle(color:kMainColor, fontSize: 34),
+              Row(
+                children: [
+                  Hero(
+                    tag: 'logo',                    child: Image.asset("assets/images/logo.png",
+                      height: 75,
+                    ),
+                  ),
+                  Text(
+                    "Log In",
+                    style: TextStyle(color:kMainColor, fontSize: 34),
+                  ),
+                ],
               ),
               SizedBox(height: 16.0),
               CustomTextFormField(label: "Email",),
@@ -33,7 +42,8 @@ class LogInScreen extends StatelessWidget {
               //           child: Text("Log In"),
               //         ),
               //       ),
-              CustomButton(title: "Log In",),
+              Hero(
+                  tag: 'logIn',child: CustomButton(title: "Log In",)),
             ],
           )
       ),

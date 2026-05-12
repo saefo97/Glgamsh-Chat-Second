@@ -14,9 +14,19 @@ class SignUpScreen extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Text(
-                "Sign Up",
-                style: TextStyle(color:kMainColor, fontSize: 34),
+              Row(
+                children: [
+                  Hero(
+                    tag: 'logo',
+                    child: Image.asset("assets/images/logo.png",
+                      height: 75,
+                    ),
+                  ),
+                  Text(
+                    "Sign Up",
+                    style: TextStyle(color:kMainColor, fontSize: 34),
+                  ),
+                ],
               ),
               SizedBox(height: 16.0),
               CustomTextFormField(label: "Email",),
@@ -34,7 +44,8 @@ class SignUpScreen extends StatelessWidget {
               //           child: Text("Sign Up"),
               //         ),
               //       ),
-              CustomButton(title: "Sign Up",),
+              Hero(
+                  tag: 'signUp',     child: CustomButton(title: "Sign Up",)),
             ],
           )
       ),
