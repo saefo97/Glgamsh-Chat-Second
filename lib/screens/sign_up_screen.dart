@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'background_decoration.dart';
-import 'constans.dart';
-import 'custom_button.dart';
-import 'custom_text_form_field.dart';
+import '../components/background_decoration.dart';
+import '../components/custom_text_form_field.dart';
+import '../constans.dart';
+import '../components/custom_button.dart';
 
 class SignUpScreen extends StatelessWidget {
   const SignUpScreen({super.key});
@@ -45,7 +45,10 @@ class SignUpScreen extends StatelessWidget {
               //         ),
               //       ),
               Hero(
-                  tag: 'signUp',     child: CustomButton(title: "Sign Up",)),
+                  tag: 'signUp',     child: CustomButton(title: "Sign Up",
+              width: 200,
+
+              )),
             ],
           )
       ),

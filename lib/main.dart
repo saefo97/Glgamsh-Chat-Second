@@ -1,7 +1,5 @@
-import 'package:chat_second/sign_up_screen.dart';
-import 'package:chat_second/welcome_screen.dart';
 import 'package:flutter/material.dart';
-import 'log_in_screen.dart';
+import 'screens/welcome_screen.dart';
 
 void main() {
   runApp(const MyApp());

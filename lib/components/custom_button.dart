@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
-import 'constans.dart';
+import '../constans.dart';
 
 class CustomButton extends StatelessWidget {
   final String title;
   final void Function()? onPressed;
-  const CustomButton({super.key, required this.title, this.onPressed});
+  double? width;
+   CustomButton({super.key, required this.title, this.onPressed, this.width = 150});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 150,
+      width: width,
       decoration: BoxDecoration(
         gradient: title == "Log In" ? kLightGradient : kDarkGradient,
 

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'constans.dart';
+import '../constans.dart';
 
 class CustomTextFormField extends StatelessWidget {
  final String label;
