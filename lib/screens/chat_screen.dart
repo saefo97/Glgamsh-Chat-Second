@@ -2,8 +2,12 @@ import 'package:chat_second/constans.dart';
 import 'package:flutter/material.dart';
 
 class ChatScreen extends StatelessWidget {
-   ChatScreen({super.key});
-bool isMe = false;
+  ChatScreen({super.key});
+
+  bool isMe = false;
+
+  List<String> X = ["Hi", "Wenk", "?", "Block"];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,44 +22,43 @@ bool isMe = false;
         // ],
         // leading: Icon(Icons.add),
       ),
-      body: ListView(
-        padding: EdgeInsets.all(8),
-        children: [
-          Container(
+      body: ListView.builder(
+        itemCount: X.length,
+        itemBuilder: (context, index) {
+          return Container(
             margin: EdgeInsets.only(bottom: 8),
-              alignment: isMe?  AlignmentGeometry.centerRight : Alignment.centerLeft,
+            alignment: isMe
+                ? AlignmentGeometry.centerRight
+                : Alignment.centerLeft,
 
-              child: Container(
+            child: Container(
               decoration: BoxDecoration(
-                color: isMe? kLightColor1 : kDarkColor2,
-                borderRadius: isMe ? BorderRadius.only(
-                  bottomLeft:  Radius.circular(32)    ,
-                  bottomRight: Radius.circular(32)      ,
-                  topLeft:     Radius.circular(32)    ,
-
-                ) : BorderRadius.only(
-                  bottomLeft:  Radius.circular(32)    ,
-                  bottomRight: Radius.circular(32)      ,
-                  topRight:     Radius.circular(32)    ,
-
-                )
+                color: isMe ? kLightColor1 : kDarkColor2,
+                borderRadius: isMe
+                    ? BorderRadius.only(
+                        bottomLeft: Radius.circular(32),
+                        bottomRight: Radius.circular(32),
+                        topLeft: Radius.circular(32),
+                      )
+                    : BorderRadius.only(
+                        bottomLeft: Radius.circular(32),
+                        bottomRight: Radius.circular(32),
+                        topRight: Radius.circular(32),
+                      ),
               ),
               padding: EdgeInsets.all(8),
-              child: Text("Hello",
-              style: TextStyle(
-                fontFamily: "times",
-                color: isMe? Colors.black : Colors.white,
-                fontSize: 18
+              child: Text(
+                X[index],
+                style: TextStyle(
+                  fontFamily: "times",
+                  color: isMe ? Colors.black : Colors.white,
+                  fontSize: 18,
+                ),
               ),
-
-              ),
-              
-              
-              )),
-
-
-
-        ],
+            ),
+          );
+        },
+        padding: EdgeInsets.all(8),
       ),
 
       bottomSheet: Padding(
@@ -76,7 +79,9 @@ bool isMe = false;
             IconButton(
               color: kDarkColor1,
 
-              onPressed: () {},
+              onPressed: () {
+
+              },
               icon: Icon(Icons.send),
             ),
           ],
