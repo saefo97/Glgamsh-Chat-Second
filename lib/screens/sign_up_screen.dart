@@ -31,8 +31,10 @@ class SignUpScreen extends StatelessWidget {
               SizedBox(height: 16.0),
               CustomTextFormField(label: "Email",),
               SizedBox(height: 8.0),
-              CustomTextFormField(label: "Password",),
-              SizedBox(height: 8.0),      CustomTextFormField(label: "Confirm Password",),
+              CustomTextFormField(label: "Password",              isPassword: true,
+              ),
+              SizedBox(height: 8.0),      CustomTextFormField(label: "Confirm Password",              isPassword: true,
+              ),
               SizedBox(height: 8.0),
               //       GestureDetector(
               //

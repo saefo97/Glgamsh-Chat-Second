@@ -1,3 +1,4 @@
+import 'package:chat_second/screens/chat_screen.dart';
 import 'package:chat_second/screens/forget_password_screen.dart';
 import 'package:flutter/material.dart';
 import '../components/background_decoration.dart';
@@ -31,7 +32,9 @@ class LogInScreen extends StatelessWidget {
               SizedBox(height: 16.0),
               CustomTextFormField(label: "Email",),
               SizedBox(height: 8.0),
-              CustomTextFormField(label: "Password",),
+              CustomTextFormField(label: "Password",
+              isPassword: true,
+              ),
               Align(
                 alignment: AlignmentGeometry.centerRight,
                 child: TextButton(onPressed: (){
@@ -58,6 +61,9 @@ class LogInScreen extends StatelessWidget {
                   tag: 'logIn',child: CustomButton(title: "Log In",
 
                 width: 200,
+                onPressed: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>ChatScreen()));
+                },
 
               )),
             ],
