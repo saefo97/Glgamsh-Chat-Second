@@ -22,69 +22,75 @@ class ChatScreen extends StatelessWidget {
         // ],
         // leading: Icon(Icons.add),
       ),
-      body: ListView.builder(
-        itemCount: X.length,
-        itemBuilder: (context, index) {
-          return Container(
-            margin: EdgeInsets.only(bottom: 8),
-            alignment: isMe
-                ? AlignmentGeometry.centerRight
-                : Alignment.centerLeft,
-
-            child: Container(
-              decoration: BoxDecoration(
-                color: isMe ? kLightColor1 : kDarkColor2,
-                borderRadius: isMe
-                    ? BorderRadius.only(
-                        bottomLeft: Radius.circular(32),
-                        bottomRight: Radius.circular(32),
-                        topLeft: Radius.circular(32),
-                      )
-                    : BorderRadius.only(
-                        bottomLeft: Radius.circular(32),
-                        bottomRight: Radius.circular(32),
-                        topRight: Radius.circular(32),
-                      ),
-              ),
-              padding: EdgeInsets.all(8),
-              child: Text(
-                X[index],
-                style: TextStyle(
-                  fontFamily: "times",
-                  color: isMe ? Colors.black : Colors.white,
-                  fontSize: 18,
+      body: SafeArea(
+        bottom: true,
+        child: ListView.builder(
+          itemCount: X.length,
+          itemBuilder: (context, index) {
+            return Container(
+              margin: EdgeInsets.only(bottom: 8),
+              alignment: isMe
+                  ? AlignmentGeometry.centerRight
+                  : Alignment.centerLeft,
+        
+              child: Container(
+                decoration: BoxDecoration(
+                  color: isMe ? kLightColor1 : kDarkColor2,
+                  borderRadius: isMe
+                      ? BorderRadius.only(
+                          bottomLeft: Radius.circular(32),
+                          bottomRight: Radius.circular(32),
+                          topLeft: Radius.circular(32),
+                        )
+                      : BorderRadius.only(
+                          bottomLeft: Radius.circular(32),
+                          bottomRight: Radius.circular(32),
+                          topRight: Radius.circular(32),
+                        ),
+                ),
+                padding: EdgeInsets.all(8),
+                child: Text(
+                  X[index],
+                  style: TextStyle(
+                    fontFamily: "times",
+                    color: isMe ? Colors.black : Colors.white,
+                    fontSize: 18,
+                  ),
                 ),
               ),
-            ),
-          );
-        },
-        padding: EdgeInsets.all(8),
+            );
+          },
+          padding: EdgeInsets.all(8),
+        ),
       ),
 
-      bottomSheet: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Row(
-          children: [
-            Expanded(
-              child: TextField(
-                minLines: 1,
-                maxLines: 5,
-                decoration: InputDecoration(
-                  hint: Text("Type a message"),
-                  enabledBorder: InputBorder.none,
-                  focusedBorder: InputBorder.none,
+      bottomSheet: SafeArea(
+        bottom: true,
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Row(
+            children: [
+              Expanded(
+                child: TextField(
+                  minLines: 1,
+                  maxLines: 5,
+                  decoration: InputDecoration(
+                    hint: Text("Type a message"),
+                    enabledBorder: InputBorder.none,
+                    focusedBorder: InputBorder.none,
+                  ),
                 ),
               ),
-            ),
-            IconButton(
-              color: kDarkColor1,
+              IconButton(
+                color: kDarkColor1,
 
-              onPressed: () {
+                onPressed: () {
 
-              },
-              icon: Icon(Icons.send),
-            ),
-          ],
+                },
+                icon: Icon(Icons.send),
+              ),
+            ],
+          ),
         ),
       ),
     );
