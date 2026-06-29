@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import '../components/background_decoration.dart';
 import '../components/custom_text_form_field.dart';
@@ -48,6 +49,9 @@ class SignUpScreen extends StatelessWidget {
               //       ),
               Hero(
                   tag: 'signUp',     child: CustomButton(title: "Sign Up",
+              onPressed: (){
+                    // FirebaseAuth.instance.createUserWithEmailAndPassword(email: email, password: password);
+              },
               width: 200,
 
               )),
