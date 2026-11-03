@@ -24,3 +24,9 @@ LinearGradient kDarkGreen = LinearGradient(
   begin: AlignmentGeometry.topCenter,
   end: AlignmentGeometry.bottomCenter,
 );
+
+LinearGradient kGrayGradient = LinearGradient(
+  colors: [Colors.grey.shade700,Colors.grey.shade300],
+  begin: AlignmentGeometry.topCenter,
+  end: AlignmentGeometry.bottomCenter,
+);

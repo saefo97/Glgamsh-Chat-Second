@@ -22,7 +22,10 @@ class CustomButton extends StatelessWidget {
         onPressed: onPressed,
         child: Text(
           title,
-          style: TextStyle(color: Colors.white, fontSize: 28.0),
+          style: TextStyle(color: Colors.white,
+              fontFamily: "times",
+
+              fontSize: 28.0),
         ),
       ),
     );
