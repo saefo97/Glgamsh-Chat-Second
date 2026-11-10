@@ -2,6 +2,7 @@ import 'package:chat_second/components/custom_button.dart';
 import 'package:chat_second/constans.dart';
 import 'package:chat_second/screens/welcome_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class OnboardingScreens extends StatefulWidget {
   const OnboardingScreens({super.key});
@@ -109,10 +110,16 @@ class _OnboardingScreensState extends State<OnboardingScreens> {
                   alignment: AlignmentGeometry.centerRight,
 
                   child: CustomButton(title: selectedIndex == 2 ? "Let's Go!" : "Next",
-                  onPressed: (){
+                  onPressed: () async {
                     selectedIndex == 2     ? 
                         Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>WelcomeScreen()))                       
                         :   _pageController.nextPage(duration: Duration(milliseconds: 300), curve: Curves.easeInOut);
+
+                    final SharedPreferences prefs = await SharedPreferences.getInstance();
+                    await prefs.setBool('isFirstTime', true);
+
+
+
                   },
 
                   )),

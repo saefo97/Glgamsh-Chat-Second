@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+
 import '../components/background_decoration.dart';
 import '../components/custom_text_form_field.dart';
 import '../constans.dart';
 
 class ForgetPasswordScreen extends StatefulWidget {
- const ForgetPasswordScreen({super.key});
+  final String email;
+  const ForgetPasswordScreen({super.key, required this.email});
 
   @override
   State<ForgetPasswordScreen> createState() => _ForgetPasswordScreenState();
@@ -12,6 +14,13 @@ class ForgetPasswordScreen extends StatefulWidget {
 
 class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
   bool isClicked = false;
+  late TextEditingController emailController = TextEditingController();
+
+  @override
+  void initState() {
+    emailController.text = widget.email;
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -33,12 +42,10 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
               ],
             ),
             SizedBox(height: 16.0),
-            CustomTextFormField(label: "Email"),
+            CustomTextFormField(label: "Email", controller: emailController),
             SizedBox(height: 8.0),
             AnimatedContainer(
-              duration: Duration(
-                milliseconds: 350
-              ),
+              duration: Duration(milliseconds: 350),
               width: isClicked ? 200 : 150,
               decoration: BoxDecoration(
                 gradient: isClicked ? kDarkGreen : kDarkGradient,
@@ -50,13 +57,14 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(30),
                 ),
-                onPressed: isClicked ? null    : () {
-                  isClicked = !isClicked;
-                  setState(() {
-
-                  });
-                  print(isClicked);
-                },
+                onPressed: isClicked
+                    ? null
+                    : () {
+                        print(emailController);
+                        isClicked = !isClicked;
+                        setState(() {});
+                        print(isClicked);
+                      },
                 child: Row(
                   mainAxisAlignment: isClicked
                       ? MainAxisAlignment.spaceEvenly
@@ -79,6 +87,3 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
     );
   }
 }
-
-
-

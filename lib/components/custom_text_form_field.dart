@@ -4,8 +4,10 @@ import '../constans.dart';
 class CustomTextFormField extends StatefulWidget {
  final String label;
  final bool isPassword;
-  const CustomTextFormField({
+ TextEditingController? controller;
+   CustomTextFormField({
     super.key, required this.label,  this.isPassword = false,
+    this.controller
   });
 
   @override
@@ -17,6 +19,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      controller:widget. controller,
       obscureText:widget. isPassword ? isHidden : false,
       decoration: InputDecoration(
         suffixIcon: widget.isPassword ? IconButton(onPressed: (){

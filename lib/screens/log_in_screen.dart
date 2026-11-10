@@ -32,6 +32,10 @@ class _LogInScreenState extends State<LogInScreen> {
   }
 
   bool isLoading = false;
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -58,9 +62,15 @@ class _LogInScreenState extends State<LogInScreen> {
                     ],
                   ),
                   SizedBox(height: 16.0),
-                  CustomTextFormField(label: "Email"),
+                  CustomTextFormField(label: "Email",
+                  controller: emailController,
+
+                  ),
                   SizedBox(height: 8.0),
-                  CustomTextFormField(label: "Password", isPassword: true),
+                  CustomTextFormField(label: "Password", isPassword: true,
+
+                  controller: passwordController,
+                  ),
                   Align(
                     alignment: AlignmentGeometry.centerRight,
                     child: TextButton(
@@ -68,7 +78,9 @@ class _LogInScreenState extends State<LogInScreen> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => ForgetPasswordScreen(),
+                            builder: (context) => ForgetPasswordScreen(
+                              email: emailController.text.trim()
+                            ),
                           ),
                         );
                       },
