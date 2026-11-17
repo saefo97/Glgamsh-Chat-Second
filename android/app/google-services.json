@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "785695233361",
+    "project_id": "glgamsh-chat-second",
+    "storage_bucket": "glgamsh-chat-second.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:785695233361:android:5b1ddc74cc9368f334af70",
+        "android_client_info": {
+          "package_name": "com.example.chat_second"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBzJ12_viD-BvbQGhiNTIzIuzAv3SSTaKk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,12 +1,13 @@
 import 'package:chat_second/constans.dart';
 import 'package:flutter/material.dart';
+import '../components/app_drawer.dart';
 
 class ChatScreen extends StatelessWidget {
   ChatScreen({super.key});
 
-  bool isMe = false;
+  bool isMe = true;
 
-  List<String> X = ["Hi", "Wenk", "?", "Block"];
+  List<String> X = ["Hi", "Wenk", "Block"];
 
   @override
   Widget build(BuildContext context) {
@@ -22,6 +23,7 @@ class ChatScreen extends StatelessWidget {
         // ],
         // leading: Icon(Icons.add),
       ),
+      endDrawer: AppDrawer(),
       body: SafeArea(
         bottom: true,
         child: ListView.builder(
@@ -63,7 +65,6 @@ class ChatScreen extends StatelessWidget {
           padding: EdgeInsets.all(8),
         ),
       ),
-
       bottomSheet: SafeArea(
         bottom: true,
         child: Padding(
@@ -96,3 +97,4 @@ class ChatScreen extends StatelessWidget {
     );
   }
 }
+
